@@ -8,7 +8,7 @@ import { getFirestore } from 'firebase/firestore/lite';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "",
+  apiKey: "AIzaSyCbXYgTwJ-UHvE3-OjoXTyEfpMggSoAN4M",
   authDomain: "react-cursos-c14bb.firebaseapp.com",
   projectId: "react-cursos-c14bb",
   storageBucket: "react-cursos-c14bb.firebasestorage.app",
