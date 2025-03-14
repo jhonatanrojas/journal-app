@@ -12,17 +12,21 @@ import {
 } from "../../store/auth/thunks";
 import { useMemo } from "react";
 
+const formData = {
+  email: "pruebas1@gmail.com",
+  password: "123456",
+};
+
 export const LoginPage = () => {
+
+
   const { status, errorMessage } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
 
   const isAuthenticating = useMemo(() => status === "checking", [status]);
 
-  const { email, password, onInputChange } = useForm({
-    email: "pruebas1@gmail.com",
-    password: "123456",
-  });
+  const { email, password, onInputChange } = useForm(formData);
 
   const onSubmit = (event) => {
     event.preventDefault();

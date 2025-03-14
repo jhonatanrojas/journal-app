@@ -5,6 +5,14 @@ export const useForm = (initialForm = {}, formValidations = {}) => {
 
   const [formValidation, setFormValidations] = useState(formValidations);
 
+  useEffect(() => {
+    createValidators();
+  }, [formState]);
+
+  useEffect(() => {
+    setFormState(initialForm);
+  }, [initialForm]);
+
   const onInputChange = ({ target }) => {
     const { name, value } = target;
     setFormState({
@@ -24,9 +32,7 @@ export const useForm = (initialForm = {}, formValidations = {}) => {
     return true;
   }, [formValidation]);
 
-  useEffect(() => {
-    createValidators();
-  }, [formState]);
+
 
   const createValidators = () => {
     const formCheckedValues = {};

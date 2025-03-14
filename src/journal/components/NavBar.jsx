@@ -3,6 +3,7 @@ import { LogoutOutlined, MenuOutlined } from '@mui/icons-material';
 import  Grid from '@mui/material/Grid2';
 import { startLogout } from '../../store/auth/thunks';
 import { useDispatch } from 'react-redux';
+import { clearNotesLogout } from '../../store/journal/journalSlice';
 
 
 // eslint-disable-next-line react/prop-types
@@ -12,7 +13,8 @@ export const NavBar = ({ drawerWidth = 240 }) => {
     const onLogout = () => { 
 
         dispatch(startLogout());
-    }
+        dispatch( clearNotesLogout() );
+    }   
 
   return (
     <AppBar 
